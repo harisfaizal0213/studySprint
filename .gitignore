@@ -1,0 +1,16 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# VSCode
+.vscode/
+
+# Docker volumes
+pgdata/
+
+# Mac/Linux junk
+.DS_Store
