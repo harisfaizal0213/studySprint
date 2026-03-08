@@ -1,9 +1,14 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from app.db import get_db 
+from app.db import get_db, engine 
+# Import Base object from model file
+from app.models.user import Base
 
 app = FastAPI(title="StudySprint API")
+
+#IMPORTANT need this to connect the session to the dataabse
+Base.metadata.create_all(bind=engine)
 
 @app.get("/api/health")
 def health():
